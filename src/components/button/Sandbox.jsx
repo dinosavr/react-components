@@ -11,6 +11,15 @@ const Sandbox = () => (
     <h2><span>2. Disabled button:</span></h2>
     <Button onClick={() => { console.log('!!!!'); }} disabled />
 
+    <h2><span>2. Custom function:</span></h2>
+    <Button onClick={(e) => { 
+    console.log('1111'); 
+    const elBtn = e.target; 
+    // elBtn.className = 'hidden'
+    const mainEl = elBtn.closest('.main');
+    mainEl.classList.add("my-class");
+    }} />
+
     <h2><span>3. Active button:</span></h2>
     <Button active />
 
@@ -26,4 +35,4 @@ const Sandbox = () => (
 );
 
 export default Sandbox;
-/* eslint-enable */
+
